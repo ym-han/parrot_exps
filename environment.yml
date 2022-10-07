@@ -7,9 +7,9 @@ channels:
 dependencies:
   - python=3.8
   - pip
-  - nvidia::cudatoolkit=11.1
+  - nvidia::cudatoolkit
   - nvidia::cudnn
-  - pytorch>=1.7
+  - pytorch==1.7.0
   - pytorch-lightning
   - torchmetrics
   - hydra-core
