@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.6.0-base-ubuntu20.04 
+FROM nvidia/cuda:11.8.0-base-ubuntu20.04
 
 LABEL maintainer="hanyongming@gmail.com"
 LABEL description="Dockerfile for Parrot model training and experiments"

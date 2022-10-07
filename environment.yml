@@ -7,7 +7,7 @@ channels:
 dependencies:
   - python=3.8
   - pip
-  - nvidia::cudatoolkit
+  - nvidia::cudatoolkit=11.8
   - nvidia::cudnn
   - pytorch==1.7.0
   - pytorch-lightning
@@ -24,7 +24,6 @@ dependencies:
   - jupyterlab
   - jupyterlab_pygments
   - jupyterlab_server
-  - nodejs
   - notebook
   - numpy
   - numpy-base
@@ -46,13 +45,11 @@ dependencies:
       - python_speech_features
       - pyautogui
       - audiomentations
-      - jupyterlab-code-formatter
       - matplotlib
       - torchtyping
       - torchviz
       - mypy
       - mypy-extensions
-      - pyflakes
       - python-telegram-bot
       - pyyaml
       - tabulate
