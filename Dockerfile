@@ -9,10 +9,7 @@ LABEL description="Dockerfile for Parrot model training and experiments"
 # https://wandb.ai/wandb_fc/pytorch-image-models/reports/A-faster-way-to-get-working-and-up-to-date-conda-environments-using-fastchan---Vmlldzo2ODIzNzA
 # Feel free to simplify if you want
 
-ARG CONDA_PYTHON_VERSION=3
 ARG CONDA_DIR=/opt/conda
-ARG USERNAME=docker
-ARG USERID=7331
 
 
 # Basic utils and portaudio
@@ -41,21 +38,13 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linu
     rm -rf /tmp/* && \
     conda update -n base -c defaults conda
 
-# Create the user
-RUN useradd --create-home -s /bin/bash --no-user-group -u $USERID $USERNAME && \
-    chown $USERNAME $CONDA_DIR -R && \
-    adduser $USERNAME sudo && \
-    echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers 
-
-USER $USERNAME
-
 
 # Install mamba
 RUN conda install -y mamba -c conda-forge
 
 # Workdir and environment related things
-COPY . /home/$USERNAME/parrot_exps
-WORKDIR /home/$USERNAME/parrot_exps
+COPY . /home/parrot_exps
+WORKDIR /home/parrot_exps
 
 ## Update the base env with environment.yml
 RUN mamba env update --file ./environment.yml 
@@ -63,7 +52,7 @@ RUN mamba env update --file ./environment.yml
 
 # For interactive shell
 RUN conda init bash
-RUN echo "conda activate base" >> /home/$USERNAME/.bashrc
+RUN echo "conda activate base" >> /.bashrc
 
 # See also https://pythonspeed.com/articles/activate-conda-dockerfile/
 # Make RUN commands use the new environment:
