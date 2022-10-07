@@ -58,6 +58,7 @@ RUN echo "conda activate base" >> /.bashrc
 # Make RUN commands use the new environment:
 SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
 
+# we're doing this instead of putting it in environment.yml b/c i ran into conda+pip issues doing it that way 
 RUN pip install -r pip_specific_requirements.txt
 
 CMD pwd
