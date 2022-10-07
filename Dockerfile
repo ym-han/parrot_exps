@@ -3,6 +3,7 @@ FROM nvidia/cuda:11.8.0-base-ubuntu20.04
 LABEL maintainer="hanyongming@gmail.com"
 LABEL description="Dockerfile for Parrot model training and experiments"
 
+# sudo docker image build -t parrotexps:latest .
 # Based on
 # https://gist.githubusercontent.com/ceshine/77623d9972c2369bf0ffd40068792caf/raw/7b84275eea4f0dddb1b067db75213eab5625b46f/Dockerfile
 # https://wandb.ai/wandb_fc/pytorch-image-models/reports/A-faster-way-to-get-working-and-up-to-date-conda-environments-using-fastchan---Vmlldzo2ODIzNzA
