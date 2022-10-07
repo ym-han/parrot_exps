@@ -1,7 +1,6 @@
 name: base
 channels:
   - fastchan
-  - nvidia
   - conda-forge
   - defaults
 dependencies:
