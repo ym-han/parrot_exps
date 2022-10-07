@@ -23,11 +23,11 @@ RUN apt-get update && \
 
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \  
     apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata && \ 
+    DEBIAN_FRONTEND=noninteractive apt-get install -y -no-install-recommends tzdata && \ 
     apt-get install -y libportaudio2 libportaudiocpp0 portaudio19-dev libsndfile1-dev
 
 # more utils
-RUN apt-get install -y blktrace linux-tools-generic strace tcpdump fd-find && \
+RUN apt-get install -y -no-install-recommends blktrace linux-tools-generic strace tcpdump fd-find && \
     curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb && \
     sudo dpkg -i ripgrep_13.0.0_amd64.deb    
 
