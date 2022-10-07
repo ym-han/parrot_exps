@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.8.0-base-ubuntu20.04
+FROM nvidia/cuda:11.6.0-base-ubuntu20.04
 
 LABEL maintainer="hanyongming@gmail.com"
 LABEL description="Dockerfile for Parrot model training and experiments"
@@ -38,7 +38,9 @@ ENV PATH $CONDA_DIR/bin:$PATH
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linux-x86_64.sh -O /tmp/miniconda.sh && \
     echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
     /bin/bash /tmp/miniconda.sh -b -p $CONDA_DIR && \   
-    rm -rf /tmp/*
+    rm -rf /tmp/* && \
+    conda update -n base -c defaults conda
+
 
 # Create the user
 RUN useradd --create-home -s /bin/bash --no-user-group -u $USERID $USERNAME && \
