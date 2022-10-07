@@ -21,6 +21,7 @@ dependencies:
   - jupyterlab
   - jupyterlab_pygments
   - jupyterlab_server
+  - tornado>=6.2
   - notebook
   - numpy
   - numpy-base
