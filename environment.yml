@@ -21,7 +21,8 @@ dependencies:
   - jupyterlab
   - jupyterlab_pygments
   - jupyterlab_server
-  - tornado>=6.2
+  - pandoc
+  - pandocfilters
   - notebook
   - numpy
   - numpy-base
@@ -29,6 +30,9 @@ dependencies:
   - requests
   - scikit-learn
   - scipy
+  - altair
+  - plotly
+  - plotly_express
   - setuptools
   - sip
   - six

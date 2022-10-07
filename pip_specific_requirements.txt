@@ -20,3 +20,4 @@ ujson
 hydra-colorlog
 hydra-optuna-sweeper
 pyrootutils
+tornado == 6.2
