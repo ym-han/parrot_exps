@@ -31,10 +31,10 @@ RUN apt-get install -y blktrace linux-tools-generic strace tcpdump fd-find && \
     sudo dpkg -i ripgrep_13.0.0_amd64.deb    
 
 
-
 # Install miniconda
+# Used a fixed path to try to debug conda solver bug
 ENV PATH $CONDA_DIR/bin:$PATH
-RUN wget --quiet https://repo.continuum.io/miniconda/Miniconda$CONDA_PYTHON_VERSION-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linux-x86_64.sh -O /tmp/miniconda.sh && \
     echo 'export PATH=$CONDA_DIR/bin:$PATH' > /etc/profile.d/conda.sh && \
     /bin/bash /tmp/miniconda.sh -b -p $CONDA_DIR && \   
     rm -rf /tmp/*
