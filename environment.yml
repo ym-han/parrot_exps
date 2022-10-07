@@ -7,8 +7,6 @@ channels:
 dependencies:
   - python=3.8
   - pip
-  - nvidia::cudatoolkit=11.8
-  - nvidia::cudnn
   - pytorch
   - pytorch-lightning
   - torchmetrics
@@ -40,26 +38,5 @@ dependencies:
   - loguru
   - pydantic
   - rich
-  - pip:
-      - pyaudio
-      - python_speech_features
-      - pyautogui
-      - audiomentations
-      - matplotlib
-      - torchtyping
-      - torchviz
-      - mypy
-      - mypy-extensions
-      - python-telegram-bot
-      - pyyaml
-      - tabulate
-      - tqdm
-      - typer
-      - wandb
-      - natsort
-      - toolz
-      - cytoolz
-      - ujson
-      - hydra-colorlog
-      - hydra-optuna-sweeper
-      - pyrootutils
+  - wandb
+prefix: /opt/conda

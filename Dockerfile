@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.8.0-base-ubuntu20.04
+FROM nvidia/cuda:11.6.0-cudnn8-runtime-ubuntu20.04
 
 LABEL maintainer="hanyongming@gmail.com"
 LABEL description="Dockerfile for Parrot model training and experiments"
@@ -64,5 +64,11 @@ RUN mamba env update --file ./environment.yml
 # For interactive shell
 RUN conda init bash
 RUN echo "conda activate base" >> /home/$USERNAME/.bashrc
+
+# See also https://pythonspeed.com/articles/activate-conda-dockerfile/
+# Make RUN commands use the new environment:
+SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
+
+RUN pip install -r pip_specific_requirements.txt
 
 CMD pwd
