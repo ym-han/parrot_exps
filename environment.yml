@@ -9,7 +9,7 @@ dependencies:
   - pip
   - nvidia::cudatoolkit=11.8
   - nvidia::cudnn
-  - pytorch==1.7.0
+  - pytorch
   - pytorch-lightning
   - torchmetrics
   - hydra-core
